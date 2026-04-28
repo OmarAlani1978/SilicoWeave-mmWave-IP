@@ -1,0 +1,74 @@
+# --- ngspice / simulator outputs ---
+*.raw
+*.log
+*.lis
+*.out
+*.tr0
+*.ac0
+*.op0
+*.ic0
+*.st0
+*.print
+ngspice.log
+
+# --- xschem ---
+*.sch.bak
+xschem.log
+simulation/
+
+# --- KLayout / layout ---
+*.gds.bak
+*.oas.bak
+*.lyrdb
+*.lvsdb
+*.l2n
+*.cir
+*.spi.bak
+
+# --- magic ---
+*.ext
+*.nodes
+*.res.ext
+*.sim
+*.al
+magic.log
+
+# --- netgen ---
+comp.out
+*.netgen.log
+
+# --- PDK (never commit) ---
+PDK/
+pdk/
+sg13g2/
+IHP-Open-PDK/
+sky130A/
+sky130B/
+
+# --- Python / build artifacts ---
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# --- Editor / OS ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Large simulation result archives (commit selectively) ---
+simulation_results/**/*.raw
+simulation_results/**/*.csv.gz
+simulation_results/**/large_runs/
+
+# --- Local environment ---
+.env
+.env.local
+setup.local.sh

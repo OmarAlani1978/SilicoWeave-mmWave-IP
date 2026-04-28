@@ -1,0 +1,37 @@
+name: Repo structure check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify expected top-level folders exist
+        run: |
+          set -e
+          for d in 00_supporting_blocks 01_lna_60ghz_sg13g2 02_vco_60ghz_sg13g2 03_pa_driver_sg13g2 docs scripts; do
+            if [ ! -d "$d" ]; then
+              echo "Missing required folder: $d"
+              exit 1
+            fi
+          done
+          echo "All required folders present."
+
+      - name: Verify each block has the expected sub-structure
+        run: |
+          set -e
+          for b in 00_supporting_blocks 01_lna_60ghz_sg13g2 02_vco_60ghz_sg13g2 03_pa_driver_sg13g2; do
+            for sub in schematics layout testbenches simulation_results docs measurements; do
+              if [ ! -d "$b/$sub" ]; then
+                echo "Missing $b/$sub"
+                exit 1
+              fi
+            done
+          done
+          echo "Block sub-structures OK."
