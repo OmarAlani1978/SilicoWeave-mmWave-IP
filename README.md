@@ -24,9 +24,17 @@ The goal is silicon-proven reference IP for V-band (24–57 GHz) and W-band fron
 | **01** | [60 GHz Low-Noise Amplifier (LNA)](./01_lna_60ghz_sg13g2/) | V-band LNA · NF < 4 dB · Gain > 18 dB · sub-10 mW | 🟡 Design starting |
 | **02** | [60 GHz VCO with PLL-friendly tuning](./02_vco_60ghz_sg13g2/) | Wide-tuning V-band VCO · Low phase noise · VerilogA model | ⚪ Planned |
 | **03** | [V-band PA Driver + RMS Power Detector](./03_pa_driver_sg13g2/) | Pre-PA driver stage with on-chip RMS power detect | ⚪ Planned |
+| **04** | [15–20 GHz PLL + 60 GHz LO Generator](./04_pll_lo_60ghz_sg13g2/) | Mid-GHz integer-N PLL + 60 GHz LO macro for presence-sensing radar | ⚪ Architecture phase |
 | **00** | [Supporting blocks](./00_supporting_blocks/) | Bandgap, biasing, decoupling, ESD pad cells | ⚪ Planned |
 
-The three headline blocks are deliberately chosen to form the **front-end half of a V-band receive chain** — each can be sold as standalone IP, and together they package as a "V-band RX front-end reference platform."
+The three headline blocks are deliberately chosen to form the **front-end half of a V-band receive chain** — each can be sold as standalone IP, and together they package as a "V-band RX front-end reference platform." Block 04 adds the frequency-synthesis path that ties them together and enables 60 GHz presence-sensing applications.
+
+### Block 04 — 15–20 GHz PLL + 60 GHz LO Generator
+
+Block 04 fills the missing frequency-synthesis path for the V-band front-end: a mid-GHz integer-N PLL at 16–18 GHz feeding a compact 60 GHz LO multiplier macro. It is positioned for low-power 60 GHz FMCW presence-sensing radar and fixed short-range links, with reuse as a standalone mid-GHz PLL IP.
+
+- Architecture decision: [`04_pll_lo_60ghz_sg13g2/docs/04_pll_lo_60ghz_architecture_decision.md`](./04_pll_lo_60ghz_sg13g2/docs/04_pll_lo_60ghz_architecture_decision.md)
+- EU presence-sensing pitch: [`docs/block04_eu_presence_sensing_pitch.md`](./docs/block04_eu_presence_sensing_pitch.md)
 
 ---
 
@@ -38,6 +46,7 @@ SilicoWeave-mmWave-IP/
 ├── 01_lna_60ghz_sg13g2/           # Block 1 — 60 GHz LNA
 ├── 02_vco_60ghz_sg13g2/           # Block 2 — 60 GHz VCO
 ├── 03_pa_driver_sg13g2/           # Block 3 — PA driver + power detect
+├── 04_pll_lo_60ghz_sg13g2/        # Block 4 — 15–20 GHz PLL + 60 GHz LO generator
 ├── docs/                          # Cross-block methodology, design notes, references
 ├── scripts/                       # Setup scripts, simulation helpers, layout utilities
 └── .github/                       # CI / issue templates / contribution guides
