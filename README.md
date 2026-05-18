@@ -107,7 +107,7 @@ Commercial licensing for productized IP releases (post silicon validation) will 
 ## Contact
 
 - **SilicoWeave** · ASIC design boutique · mmWave & SiGe BiCMOS
-- **Maintainer:** Omar Al-Ani — [omar@eastgatex.com](mailto:omar@eastgatex.com)
+- **Maintainer:** Omar Al-Ani — [omar@silicoweave.com](mailto:omar@silicoweave.com)
 - **GitHub:** [@OmarAlani1978](https://github.com/OmarAlani1978)
 
 ---
