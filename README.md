@@ -13,7 +13,7 @@ The goal is silicon-proven reference IP for V-band (24–57 GHz) and W-band fron
 - **High-fT SiGe HBTs** (npn13G2: fT 250 GHz / fmax 340 GHz) — the right device class for low-noise, low-phase-noise mmWave circuits.
 - **Open PDK** with KLayout / xschem / ngspice / magic / netgen flow — fully reproducible, no NDA for the development phase.
 - **Production foundry path** via X-Fab's 2024 license of the IHP 130 nm SiGe BiCMOS platform — IP designed here is production-portable.
-- **Affordable open-source MPW** — IHP OpenMPW shuttles at €2,800/mm² on the SG13G2 process make silicon validation accessible for an early-stage IP shop.
+- **Affordable open-source MPW** — IHP OpenMPW shuttles at €2,800/mm² on the SG13G2 process make silicon validation accessible for an early-stage IP supplier.
 
 ---
 
